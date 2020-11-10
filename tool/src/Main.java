@@ -26,8 +26,8 @@ public class Main {
             System.out.println("------------------------------");
             selector.addSLO(new SLO("MUP",99.95,"<="));
             selector.addSLO(new SLO("RTO",40,">="));
+            System.out.println(selector.select());
 
-            selector.select();
         }
         catch (Exception e)
         {
