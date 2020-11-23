@@ -25,7 +25,6 @@ public class DBManager {
     }
 
     public ResultSet getAllEntries() throws SQLException {
-
         String query="SELECT * from "+tableName;
         return con.createStatement().executeQuery(query);
     }
@@ -40,6 +39,16 @@ public class DBManager {
         return list;
     }
 
+    public String getSpecific(String collum,int id) throws SQLException {
+        String entry="";
+        rs=con.createStatement().executeQuery("SELECT "+collum +" from "+tableName+" WHERE sla_id="+id);
+        while(rs.next())
+        {
+
+            entry=rs.getString(1);
+        }
+        return entry;
+    }
     public String getTableName() {
         return tableName;
     }
